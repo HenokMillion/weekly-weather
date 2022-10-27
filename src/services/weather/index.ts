@@ -27,7 +27,7 @@ export interface WeatherData {
 
 const getLatLongByCityName = async (cityName: string) => {
     const response = await axios.get(
-        ` http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${process.env.REACT_APP_OPEN_WEATHER_API_KEY}`
+        ` https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${process.env.REACT_APP_OPEN_WEATHER_API_KEY}`
     );
 
     return {
