@@ -1,6 +1,4 @@
-import { ReactFragment, FC } from "react";
-import { FaBolt, FaCloud, FaCloudRain, FaCloudSun, FaPooStorm, FaSnowflake, FaSun } from "react-icons/fa";
-import rainySvg from '../../images/rainy.svg';
+import { FC } from "react";
 
 export enum WeatherType {
     CLOUDY,
