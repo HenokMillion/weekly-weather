@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useCallback, useState } from 'react';
+import { useAsync } from 'react-use'
+import './App.scss';
+import CityCard from './components/CityCard';
+import { CityTabs } from './components/CityTabs';
+import WeatherService from './services/weather';
 
 function App() {
+  const cities = ['OTTAWA', 'MOSCOW', 'TOKYO'];
+  const [selectedCity, setSelectedCity] = useState(cities[0]);
+
+  const handleCityChange = useCallback((city: string) => {
+    setSelectedCity(city);
+  }, [setSelectedCity]);
+
+  const { value: fiveDayWeatherForecast, loading } = useAsync(async () => {
+    return await WeatherService.getFiveDayForecast(selectedCity);
+  }, [selectedCity]);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CityTabs cities={cities} onChange={handleCityChange} />
+      {fiveDayWeatherForecast && <CityCard weatherData={fiveDayWeatherForecast} loading={loading} />}
     </div>
   );
 }

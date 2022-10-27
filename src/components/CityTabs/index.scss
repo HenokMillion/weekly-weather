@@ -1,0 +1,24 @@
+.city-tabs {
+    background-color: transparent !important;
+    width: 100%;
+    text-align: center;
+
+    .ant-segmented-item-selected {
+        background-color: transparent;
+        color: #72AFE3;
+        box-shadow: unset;
+    }
+
+    .ant-segmented-item .ant-segmented-item-selected {
+        background-color: transparent;
+        color: #72AFE3;
+        box-shadow: unset;
+    }
+
+    .ant-segmented-group {
+        justify-content: center;
+        margin: 20px 0;
+        font-size: 25px;
+        gap: 35px;
+    }
+}

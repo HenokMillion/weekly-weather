@@ -1,0 +1,33 @@
+.weather-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #333339;
+    margin: 0;
+    width: 100%;
+
+    .ant-card {
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .day {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 100;
+        font-size: 20px;
+        margin: 0;
+        padding-bottom: 0px;
+    }
+
+    .weather-icon {
+        font-size: 39px;
+    }
+
+    .temprature {
+        font-family: "Teko", sans-serif;
+        font-weight: 300;
+        font-size: 30px;
+        margin: 0;
+    }
+}
